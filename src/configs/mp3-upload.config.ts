@@ -1,4 +1,6 @@
 import { DestinationCallback, FilenameCallback } from "@definitions/multer";
+import { ErrorCode } from "@enums/error-code";
+import { MimeType } from "@enums/mime-type";
 import env from "@utils/env";
 import { Request } from "express";
 import fs from "fs";
@@ -26,8 +28,11 @@ export const uploadStorage: StorageEngine = multer.diskStorage({
 
 export const mp3FileFilter = (
   _req: Request,
-  _file: Express.Multer.File,
+  file: Express.Multer.File,
   callback: FileFilterCallback
 ) => {
+  if (file.mimetype !== MimeType.MP3Audio) {
+    return callback(new Error(ErrorCode.UnrecognizableFormat));
+  }
   callback(null, true);
 };

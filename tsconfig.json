@@ -3,6 +3,23 @@
     "target": "ES2020",
     "module": "CommonJS",
     "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@configs/env": ["src/configs/env.config"],
+      "@configs/mp3-upload": ["src/configs/mp3-upload.config"],
+      "@controllers/mp3": ["src/controllers/mp3.controller"],
+      "@definitions/api": ["src/types/api/api.d"],
+      "@definitions/multer": ["src/types/multer/disk-storage.d"],
+      "@definitions/env": ["src/types/utils/env.d"],
+      "@enums/error-code": ["src/enums/error-code.enum"],
+      "@enums/http-status": ["src/enums/http-status.enum"],
+      "@enums/mime-type": ["src/enums/mime-type.enum"],
+      "@middlewares/error": ["src/middlewares/error.middleware"],
+      "@routes/mp3": ["src/routes/mp3.route"],
+      "@utils/env": ["src/utils/env.util"],
+      "@utils/mp3-parser": ["src/utils/mp3-parser.util"],
+      "@utils/mp3-upload": ["src/utils/mp3-upload.util"]
+    },
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,5 +27,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "media"]
+  "exclude": ["node_modules"]
 }

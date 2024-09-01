@@ -1,8 +1,7 @@
-import { Env } from "@definitions/env";
 import path from "path";
-import { z } from "zod";
+import { ZodRawShape, z } from "zod";
 
-const env: Env = {
+const schema: ZodRawShape = {
   PORT: z
     .string()
     .regex(/^\d+$/, "PORT must be a number.")
@@ -19,4 +18,4 @@ const env: Env = {
     .default(""),
 };
 
-export default env;
+export default schema;

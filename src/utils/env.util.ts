@@ -1,8 +1,8 @@
-import configs from "@configs/env";
+import schema from "@configs/env";
 import "dotenv/config";
 import { z } from "zod";
 
-const envSchema = z.object(configs);
+const envSchema = z.object(schema);
 
 const env = envSchema.parse(process.env);
 

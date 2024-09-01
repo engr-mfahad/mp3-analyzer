@@ -1,9 +1,6 @@
-export interface DestinationCallback {
-  error: Error | null;
-  destination: string;
-}
+export type DestinationCallback = (
+  error: Error | null,
+  destination: string
+) => void;
 
-export interface FilenameCallback {
-  error: Error | null;
-  filename: string;
-}
+export type FilenameCallback = (error: Error | null, filename: string) => void;
