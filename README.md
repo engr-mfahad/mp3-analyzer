@@ -53,19 +53,25 @@ Mp3 file anaylsis app which looks for and parses the MPEG Version 1 Layer 3 file
 
 ## Usage
 
-1. **Build the project:**
+- **Run the application in development mode:**
 
    ```sh
-   npm run build
+   npm run dev
    ```
-
-2. **Run the application:**
+- **Run the application after compiling:**
 
    ```sh
    npm start
    ```
 
-3. **Access the API:**
+- **Build the project:**
+
+   ```sh
+   npm run build
+   ```
+
+
+- **Access the API:**
 
    Simply use the following URL to access and test it:
    `http://localhost:7000/file-upload`.
