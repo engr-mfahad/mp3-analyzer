@@ -17,18 +17,20 @@ export const countAudioFrames = async (
   res: Response,
   next: NextFunction
 ) => {
-  if (!req.file?.path) throw new Error(ErrorCode.NoFileUploaded);
+  if (!req.file?.path) next(new Error(ErrorCode.NoFileUploaded));
   const data: APIResponse = {
     frameCount: 0,
   };
   try {
-    data.frameCount = mp3Parser.countFrames(req.file.path);
+    data.frameCount = mp3Parser.countFrames(req.file?.path);
   } catch (error) {
-    return await _postreqs(req.file.path, () => {
-      next(error);
-    });
+    if (req.file?.path)
+      return await _postreqs(req.file.path, () => {
+        next(error);
+      });
+    return next(error);
   }
-  if (!process.env.SAVE_UPLOADS)
+  if (!process.env.SAVE_UPLOADS && req.file?.path)
     return await _postreqs(req.file.path, () =>
       res.status(HttpStatus.OK).json(data)
     );
