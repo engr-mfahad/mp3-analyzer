@@ -5,5 +5,6 @@ export const countAudioFrames = async (
   res: Response,
   next: NextFunction
 ) => {
+  console.log(req.file);
   res.json({ frameCount: 0 });
 };
