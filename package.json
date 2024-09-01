@@ -1,0 +1,36 @@
+{
+  "name": "mp3-analyzer",
+  "version": "1.0.0",
+  "description": "Mp3 file anaylsis app which looks for and parses the MPEG Version 1 Layer 3 file then responds back with the total number of audio frames in it.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.16.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/engr-mfahad/mp3-analyzer.git"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "mp3-analyzer"
+  ],
+  "author": "Muhammad Fahad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engr-mfahad/mp3-analyzer/issues"
+  },
+  "homepage": "https://github.com/engr-mfahad/mp3-analyzer#readme"
+}
